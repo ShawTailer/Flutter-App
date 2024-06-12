@@ -11,9 +11,16 @@ class QuestionScreen extends StatefulWidget {
 }
 
 class _QuestionScreenState extends State<QuestionScreen> {
+  var index = 0;
+  void clickOnButton() {
+    setState(() {
+      index = index + 1;
+    });
+  }
+
   @override
   Widget build(context) {
-    final currentQuestion = questions[0];
+    final currentQuestion = questions[index];
     return SizedBox(
       width: double.infinity,
       child: Container(
@@ -24,14 +31,17 @@ class _QuestionScreenState extends State<QuestionScreen> {
           children: [
             Text(
               currentQuestion.text,
-              style: const TextStyle(color: Color.fromARGB(240, 248, 244, 244), fontSize: 30),
+              style: const TextStyle(
+                  color: Color.fromARGB(240, 248, 244, 244), fontSize: 30),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 30,),
+            const SizedBox(
+              height: 30,
+            ),
             ...currentQuestion.shuffleList().map((e) {
               return AnswerButton(
                 answerText: e,
-                onTap: () {},
+                onTap: clickOnButton,
               );
             }),
           ],

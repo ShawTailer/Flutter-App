@@ -12,7 +12,7 @@ class StartScreen extends StatelessWidget {
           Opacity(
             opacity: 1.0,
             child: Image.asset(
-              'asset/images/quiz-logo.png',
+              'asset/images/quiz-logo.png',   
               width: 250,
             ),
           ),
