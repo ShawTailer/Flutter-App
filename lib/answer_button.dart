@@ -10,13 +10,16 @@ class AnswerButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onTap,
       style: ElevatedButton.styleFrom(
-          backgroundColor: const Color.fromARGB(252, 69, 8, 224),
+          backgroundColor: const Color.fromARGB(251, 73, 3, 122),
           foregroundColor: Colors.white,
           padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(40),
           )),
-      child: Text(answerText),
+      child: Text(
+        answerText,
+        textAlign: TextAlign.center,
+      ),
     );
   }
 }
